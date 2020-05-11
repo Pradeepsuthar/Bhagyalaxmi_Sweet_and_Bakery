@@ -21,7 +21,7 @@
         <div class="d-none d-sm-none d-md-block">
             <div class="d-flex justify-content-between">
                 <img class="py-3" id="logo-main" src="images/Bhagyalaxmi_logo.jpg" width="150"
-                alt="Logo Thing main logo">
+                    alt="Logo Thing main logo">
                 <div class="p-4">
                     <nav class="nav">
                         <a class="nav-link active" href="#"><i class="fa fa-facebook"></i></a>
@@ -73,10 +73,10 @@
     <!-- Brand Banner -->
     <div class="jumbotron jumbotron-fluid banner">
         <div class="container banner-text text-center">
-            <h1>Bhagyalaxmi <span class="m-0 p-0"><img
+            <h1><span id="companyName"></span> <span class="m-0 p-0"><img
                         src="https://i.pinimg.com/originals/8d/31/44/8d31440ebf18d6588c4e005a0c187240.png" width="30px"
                         height="30px"></span></h1>
-            <h3>Sweets & Bakery</h3>
+            <h3 id="companyType"></h3>
             <a href="products.html" class="buy-btn shadow-sm text-decoration-none">Order Now</a>
         </div>
     </div>
@@ -86,84 +86,13 @@
         <div class="container text-center py-0">
             <h1 class="h3 font-weight-bold">Our Services</h1>
         </div>
+        <!-- Display Services here -->
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="ourServices">
 
-        <div class="container py-3">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="text-center">
-                        <div class="px-5">
-                            <img class="my-4 service-img"
-                                src="https://pngimage.net/wp-content/uploads/2018/06/sweets-images-png-.png" alt="">
-                        </div>
-                        <h4> Sweets </h4>
-                        <p>Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes
-                            chocolate cake sesame snaps</p>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="text-center">
-                        <div class="px-5">
-                            <img class="my-4 service-img"
-                                src="https://lh3.googleusercontent.com/proxy/eoYvlslaaeBLWL7hMrNWrUYnpmc0kf42yztIWxAV7YLLU0Awe4BexvR5SfI5mfH4Bhdz627YDmm9DCKvjivITHSC3Cwk8x4"
-                                alt="">
-                        </div>
-                        <h4> Cakes</h4>
-                        <p>Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes
-                            chocolate cake sesame snaps</p>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="text-center">
-                        <div class="px-5">
-                            <img class="my-4 service-img"
-                                src="https://www.seekpng.com/png/full/89-891255_fast-food-png-food.png" alt="">
-                        </div>
-                        <h4> Fast Food</h4>
-                        <p>Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes
-                            chocolate cake sesame snaps</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- Our History -->
-    <section class="container jumbotron bg-white pb-0">
-        <div class="container text-center py-0">
-            <h1 class="h3 font-weight-bold"> Our History</h1>
-            <p class="lead">2011 to Now</p>
-        </div>
-
-        <div class="container py-3">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="text-center">
-                        <img class="my-4" src="http://nouthemes.net/html/bready/images/icons/award-2.png" alt="">
-                        <h4> BAKERY OF THE YEAR <span>2011 -2012</span></h4>
-                        <p>Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes
-                            chocolate cake sesame snaps</p>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="text-center">
-                        <img class="my-4" src="http://nouthemes.net/html/bready/images/icons/award-1.png" alt="">
-                        <h4> BAKERY OF THE YEAR <span>2011 -2012</span></h4>
-                        <p>Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes
-                            chocolate cake sesame snaps</p>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="text-center">
-                        <img class="my-4" src="http://nouthemes.net/html/bready/images/icons/award-2.png" alt="">
-                        <h4> BAKERY OF THE YEAR <span>2011 -2012</span></h4>
-                        <p>Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes
-                            chocolate cake sesame snaps</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!--  -->
     <section class="jumbotron p-0 bg-white">
@@ -176,26 +105,28 @@
                     <div class="container brand-history-text">
                         <h1>“It seems that every country that can get its hands on butter has its opinion of what butter
                             cream frosting should be. Some are made with eggs and butter.”</h1>
-                        <p class="my-4">Kailash Mali - CEO Bhagyalaxmi Sweet and Bakery</p>
+                        <p class="my-4"><span id="ownerName"></span> <span id="ownerPosition"></span></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
     <!-- Footer -->
     <footer class="container pt-4 my-md-5 pt-md-5 border-top">
         <div class="text-center mb-3">
-            <span class="text-muted" style="font-size: 15px;">&copy; Copyright by Bhagyalaxmi Sweet and Bakery. Design
-                by splixcube.</span>
+            <span class="text-muted" style="font-size: 15px;">
+                &copy; Copyright by Bhagyalaxmi Sweet and Bakery. Design by splixcube.
+            </span>
         </div>
     </footer>
 
-
-
     <!-- Optional JavaScript -->
+    <script src="js/app.js"></script>
+    <script>
+        onInit()
+        DisplayServices()
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

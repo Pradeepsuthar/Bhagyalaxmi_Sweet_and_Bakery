@@ -76,46 +76,9 @@
         </div>
       </div>
 
+      <!-- Image Gallery -->
     <section class="container jumbotron bg-white">
-        <div class="row row-cols-3 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 p-0">
-
-            <div class="col mb-4">
-                <div class="card hvr-shadow">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-vfox2m66v9.jpg"
-                        class="card-img-top" alt="...">
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card hvr-shadow">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-gzr3x8yqa4.jpg"
-                        class="card-img-top" alt="...">
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card hvr-shadow">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-2u2p758gf3.jpg"
-                        class="card-img-top" alt="...">
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card hvr-shadow">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-wyh97kblmw.jpg"
-                        class="card-img-top" alt="...">
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card hvr-shadow">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-e5gpq3myhv.jpg"
-                        class="card-img-top" alt="...">
-                </div>
-            </div>
-            <div class="col mb-4" data-toggle="modal" data-target="#exampleModalCenter">
-                <div class="card hvr-shadow">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-t6j1ny5u74.jpg"
-                        class="card-img-top" alt="...">
-                </div>
-            </div>
-
+        <div class="row row-cols-3 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 p-0" id="imgGallery">
         </div>
     </section>
 
@@ -132,8 +95,7 @@
                     </button>
                 </div>
                 <div class="card p-0">
-                    <img src="https://content.jdmagicbox.com/comp/sirohi/e1/9999p2972.2972.190331124743.k3e1/catalogue/bhagyalaxmi-sweet-and-bakery-pindwara-sirohi-sweet-shops-t6j1ny5u74.jpg"
-                        class="card-img-top" alt="...">
+                    <img id="currentImg" class="card-img-top">
                 </div>
             </div>
         </div>
@@ -152,6 +114,10 @@
 
 
     <!-- Optional JavaScript -->
+    <script src="js/app.js"></script>
+    <script>
+        AllGalleryImages()
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
