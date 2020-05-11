@@ -13,11 +13,14 @@
     <title>Bhagyalaxmi Sweet & Bakery</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 </head>
 
 <body>
     <!-- Navbar -->
-    <header class="bg-white m-0">
+    <header class="bg-light m-0">
         <div class="d-none d-sm-none d-md-block">
             <div class="d-flex justify-content-between">
                 <img class="py-3" id="logo-main" src="images/Bhagyalaxmi_logo.jpg" width="150"
@@ -71,13 +74,29 @@
     </header><!-- header -->
 
     <!-- Brand Banner -->
-    <div class="jumbotron jumbotron-fluid banner">
+    <!-- <div class="jumbotron jumbotron-fluid banner">
         <div class="container banner-text text-center">
             <h1><span id="companyName"></span> <span class="m-0 p-0"><img
                         src="https://i.pinimg.com/originals/8d/31/44/8d31440ebf18d6588c4e005a0c187240.png" width="30px"
                         height="30px"></span></h1>
             <h3 id="companyType"></h3>
             <a href="products.html" class="buy-btn shadow-sm text-decoration-none">Order Now</a>
+        </div>
+    </div> -->
+
+    <!-- Set up your HTML -->
+    <div class="owl-carousel">
+        <div class="carousel-div">
+            <img src="https://cdn.shopify.com/s/files/1/0388/9673/t/9/assets/banner-07.jpg?v=15605601177373489774"
+                class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="carousel-div">
+            <img src="https://www.shelbournebakery.com/wp-content/uploads/2016/01/Web-banner-2.png"
+                class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="carousel-div">
+            <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX28911421.jpg" class="img-fluid"
+                alt="Responsive image">
         </div>
     </div>
 
@@ -123,14 +142,26 @@
 
     <!-- Optional JavaScript -->
     <script src="js/app.js"></script>
-    <script>
-        onInit()
-        DisplayServices()
-    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        // onInit()
+        DisplayServices()
+
+
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: false
+        });
+    </script>
 </body>
 
 </html>

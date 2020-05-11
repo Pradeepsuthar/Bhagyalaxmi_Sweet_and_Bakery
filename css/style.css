@@ -81,6 +81,19 @@ ul li a{
     }
   }
 
+
+
+  /* Carousel */
+  
+  .carousel-div img{
+      width: 100%;
+  }
+  
+  
+  
+  /* Carousel */
+
+
 .buy-btn{
     background-color: transparent;
     color: #fff;
@@ -168,3 +181,5 @@ header{
 .fa{
     color: #222;
 }
+
+
