@@ -1,3 +1,29 @@
+// Firebase configrations
+var firebaseConfig = {
+    apiKey: "AIzaSyAJOm29FsjGtNiuj8g3m3G3S5iW5n69Oig",
+    authDomain: "webbuilder081.firebaseapp.com",
+    databaseURL: "https://webbuilder081.firebaseio.com",
+    projectId: "webbuilder081",
+    storageBucket: "webbuilder081.appspot.com",
+    messagingSenderId: "142256510593",
+    appId: "1:142256510593:web:8c1a07c0c50c3f31b1df80",
+    measurementId: "G-2RR8FHSQL3"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var id = "Yg0jIjIqTpX1FEGpT6BDZskZ4iL2"
+
+firebase.firestore().collection("users").doc(id).get().then(function (doc) {
+    window.UsersDetails = doc.data()
+    console.log(UsersDetails)
+    Address(UsersDetails)
+})
+
+
+
+
+
 // console.log("Bhagyalaxmi Sweet & Bakery")
 
 let siteTemplateData = {
@@ -52,26 +78,32 @@ let siteTemplateData = {
     ],
 }
 
-function onInit() {
-    document.getElementById('companyName').innerHTML = siteTemplateData.companyName;
-    document.getElementById('companyType').innerHTML = siteTemplateData.companyType;
-    document.getElementById('ownerName').innerHTML = siteTemplateData.ownerName;
-    document.getElementById('ownerPosition').innerHTML = siteTemplateData.ownerPosition;
+function onInit(userData) {
+    document.getElementById('companyName').innerHTML = userData.shopName;
+    // document.getElementById('ownerName').innerHTML = userData.ownerName;
 }
-
 // All Company Services
-function DisplayServices() {
-    serviceObj = siteTemplateData.services;
+// fetch data form user subcollection Service
+firebase.firestore().collection("users").doc(id).collection("services").onSnapshot(function (snapshot) {
+    window.Service = []
+    snapshot.forEach(function (taskValue) {
+        return window.Service.push(taskValue.data())
+    })
+    console.log(window.Service)
+    DisplayServices(window.Service)
+})
+function DisplayServices(serviceData) {
+    serviceObj = serviceData;
     let html = "";
     serviceObj.forEach(function (siteTemplateData, i) {
         html += `
                 <div class="col my-2">
                 <div class="card shadow-sm text-center">
                     <div class="px-5">
-                        <img class="my-4 service-img" src="${siteTemplateData['serviceLogoPath']}">
+                        <img class="my-4 service-img" src="${siteTemplateData['imgUrl']}">
                     </div>
                     <h4>${siteTemplateData['title']}</h4>
-                    <p>${siteTemplateData['description']}</p>
+                    <p>${siteTemplateData['desc']}</p>
                 </div>
             </div>`;
     });
@@ -84,19 +116,28 @@ function DisplayServices() {
 }
 
 // All Company Products
-function AllProducts() {
-    productObj = siteTemplateData.products;
+// fetch data form user subcollection Products
+firebase.firestore().collection("users").doc(id).collection("products").onSnapshot(function (snapshot) {
+    window.products = []
+    snapshot.forEach(function (taskValue) {
+        return window.products.push(taskValue.data())
+    })
+    // console.log(window.products)
+    AllProducts(window.products)
+})
+function AllProducts(productsData) {
+    productObj = productsData;
     let html = "";
     productObj.forEach(function (siteTemplateData, i) {
         html += `
                 <div class="col mb-4">
                 <div class="card hvr-shadow container">
                     <div class="card-body">
-                        <img src="${siteTemplateData['productImgPath']}" alt="${siteTemplateData['productName']}" class="product-img">
+                        <img src="${siteTemplateData['imgUrl']}" alt="${siteTemplateData['itemName']}" class="product-img">
                     </div>
-                    <h4> ${siteTemplateData['productName']} </h4>
-                    <h5 class="text-success">Rs.${siteTemplateData['price']}</h5>
-                    <p>${siteTemplateData['description']}</p>
+                    <h5> ${siteTemplateData['itemName']} </h5>
+                    <h5 class="text-success">Rs.${siteTemplateData['itemPrice']}</h5>
+                    <p class="text-truncate">${siteTemplateData['itemDescription']}</p>
                     <a href="#" class="stretched-link btn-primary-custom btn mb-4">Buy Now</a>
                 </div>
             </div>`;
@@ -110,19 +151,29 @@ function AllProducts() {
 }
 
 // All Company Gallery Images
-function AllGalleryImages() {
-    let currentImg = siteTemplateData['galleryImgPath'];
-    imgObj = siteTemplateData.galleryImage;
+// fetch data form user subcollection Gallery
+firebase.firestore().collection("users").doc(id).collection("gallery").onSnapshot(function (snapshot) {
+    window.gallery = []
+    snapshot.forEach(function (taskValue) {
+        return window.gallery.push(taskValue.data())
+    })
+    // console.log(window.gallery)
+    AllGalleryImages(window.gallery)
+
+})
+function AllGalleryImages(galleryData) {
+    let currentImg = galleryData['imgUrl'];
+    imgObj = galleryData;
     let html = "";
-    imgObj.forEach(function (siteTemplateData, i) {
+    imgObj.forEach(function (galleryData, i) {
         html += `
             <div class="col mb-4" data-toggle="modal" data-target="#exampleModalCenter">
                 <div class="card hvr-shadow">
-                    <img src="${siteTemplateData['galleryImgPath']}"
+                    <img src="${galleryData['imgUrl']}"
                         class="card-img-top">
                 </div>
             </div>`;
-        document.getElementById('currentImg').src = siteTemplateData['galleryImgPath'];
+        document.getElementById('currentImg').src = galleryData['imgUrl'];
     });
     let nodeElm = document.getElementById("imgGallery");
     if (imgObj.length != 0) {
@@ -133,3 +184,12 @@ function AllGalleryImages() {
 }
 
 
+function Address(userData){
+    document.getElementById('area').innerHTML=userData.address.area;
+    document.getElementById('city').innerHTML=userData.address.city;
+    document.getElementById('state').innerHTML=userData.address.state;
+    // document.getElementById('country').innerHTML=userData.address.country;
+    document.getElementById('zipCode').innerHTML=userData.address.zipCode;
+    document.getElementById('shopName').innerHTML=userData.shopName;
+    document.getElementById('PhoneNo').innerHTML=userData.phoneNo;
+}
